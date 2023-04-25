@@ -7,18 +7,17 @@ const agruparPorData = (estrelas, agrupamento) => {
     const data = new Date(estrela.starred_at);
 
     if (agrupamento === 'dia') {
-      data.setHours(0, 0, 0, 0);
-    } else if (agrupamento === 'semana') {
+      data.setHours(0, 0, 0, 0);} 
+    else if (agrupamento === 'semana') {
       data.setDate(data.getDate() - data.getDay());
-      data.setHours(0, 0, 0, 0);
-    } else if (agrupamento === 'mes') {
+      data.setHours(0, 0, 0, 0);} 
+    else if (agrupamento === 'mes') {
       data.setDate(1);
       data.setHours(0, 0, 0, 0);
     } else if (agrupamento === 'ano') {
       data.setMonth(0, 1);
       data.setHours(0, 0, 0, 0);
     }
-
     if (acc[data]) {
       acc[data] += 1;
     } else {
@@ -30,7 +29,6 @@ const agruparPorData = (estrelas, agrupamento) => {
   agrupamentoPorData = Object.entries(agrupamentoPorData).sort((a, b) => {
     return new Date(a[0]) - new Date(b[0]);
   });
-
   return agrupamentoPorData.map((data) => {
     return { date: data[0], estrelas: data[1] };
   });
