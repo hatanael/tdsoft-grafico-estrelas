@@ -13,16 +13,14 @@ const agruparPorData = (estrelas, agrupamento) => {
       data.setHours(0, 0, 0, 0);} 
     else if (agrupamento === 'mes') {
       data.setDate(1);
-      data.setHours(0, 0, 0, 0);
-    } else if (agrupamento === 'ano') {
+      data.setHours(0, 0, 0, 0);} 
+    else if (agrupamento === 'ano') {
       data.setMonth(0, 1);
-      data.setHours(0, 0, 0, 0);
-    }
+      data.setHours(0, 0, 0, 0);}
     if (acc[data]) {
-      acc[data] += 1;
-    } else {
-      acc[data] = 1;
-    }
+      acc[data] += 1;} 
+    else {
+      acc[data] = 1;}
     return acc;
   }, {});
 
